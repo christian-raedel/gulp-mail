@@ -16,10 +16,7 @@ module.exports = function (options) {
         html: null,
         smtp: null
     });
-    //var transporter = nodemailer.createTransport(
-    //    options.transporter || { service: 'sendmail' }
-    //);
-    var transporter = nodemailer.createTransport('SMTP', options.smtp)
+    var transporter = nodemailer.createTransport('sendmail');
 
     return through2.obj(function (file, enc, next) {
         if (file.isNull()) {
